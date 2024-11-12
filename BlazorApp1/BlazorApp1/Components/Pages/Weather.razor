@@ -1,0 +1,27 @@
+﻿@page "/WeatherForecast"
+@using BlazorApp1.Models
+@using BlazorApp1.Services
+@inject ClienteAPI clienteAPI
+
+<h4>Lista de WeatherForeCasts</h4>
+
+@if(ListaClientes != null)
+{
+    @foreach (var item in ListaClientes)
+    {
+    <p>@item.TemperatureC</p>    
+    }
+}
+ 
+
+
+@code {
+
+    public ICollection<ClienteResponse>? ListaClientes; 
+
+    protected override async Task OnInitializedAsync()
+    {
+        ListaClientes = await clienteAPI.GetWeatherForecast();
+    }
+
+}
