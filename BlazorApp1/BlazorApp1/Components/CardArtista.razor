@@ -1,4 +1,7 @@
-﻿@* <MudCard>
+﻿@using BlazorApp1.Components.Pages
+@using ScreenSound.Web.Response
+
+<MudCard>
     <MudCardMedia Image="images/cardArtista.png"></MudCardMedia>
     <MudCardHeader>
         <CardHeaderContent>
@@ -8,10 +11,10 @@
         <MudCardContent>
             <MudText Typo="Typo.body2">@Artista!.Bio</MudText>
         </MudCardContent>
-</MudCard>
+    </MudCard>
 
 @code {
     [Parameter]
     public ArtistaResponse? Artista { get; set; }
+
 }
- *@
